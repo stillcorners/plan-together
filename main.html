@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
+    />
+    <link
+      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: "NanumGothic";
+        background-color: rgb(229, 227, 201);
+      }
+
+      .main_container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        max-width: 400px;
+        min-width: 320px;
+        padding: 30px;
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main_container_phrase {
+        font-family: "NanumGothic";
+        margin-top: 16px;
+        margin-bottom: 16px;
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .main_container_date {
+        padding-bottom: 16px;
+      }
+
+      .main_container_plan {
+        margin-top: 16px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+
+      .main_container_completed_plan {
+        margin-top: 32px;
+        margin-bottom: 24px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      ul {
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      .main_btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background: rgb(211, 228, 205);
+        cursor: pointer;
+        margin-left: auto;
+        display: block;
+      }
+
+      .checkbox {
+        /* min-width: none;
+        min-height: none; */
+        width: 24px;
+        height: 24px;
+        margin: 10px;
+        border-radius: 50px;
+        border: 1px solid lightgray;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: -18px;
+        /* background: rgb(173, 194, 169); */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <section class="main_container_nav">
+        <h1 class="main_container_phrase">Plan Together</h1>
+        <p class="main_container_date"></p>
+      </section>
+      <section class="main_container_list">
+        <h2 class="main_container_plan">계획을 세워요</h2>
+        <ul>
+          <li class="detail_plan">
+            <div class="checkbox"></div>
+            대전여행
+          </li>
+        </ul>
+        <h2 class="main_container_completed_plan">완료된 계획</h2>
+        <ul>
+          <li class="detail_completed_plan">
+            <div class="checkbox"></div>
+            하이디라오
+          </li>
+        </ul>
+      </section>
+      <button class="main_btn">➕</button>
+    </div>
+
+    <script>
+      const today = new Date();
+      const week = ["일", "월", "화", "수", "목", "금", "토"];
+
+      date = new Date();
+      year = date.getFullYear();
+      month = date.getMonth() + 1;
+      day = date.getDate();
+
+      document.getElementsByClassName("main_container_date")[0].innerHTML =
+        year +
+        "년 " +
+        month +
+        "월 " +
+        day +
+        "일 " +
+        week[today.getDay()] +
+        "요일";
+
+      const checkbox = document.getElementsByClassName("checkbox")[0];
+      const detail_plan = document.getElementsByClassName("detail_plan")[0];
+      const detail_completed_plan = document.getElementsByClassName(
+        "detail_completed_plan"
+      )[0];
+
+      checkbox.addEventListener("click", function () {
+        checkbox.style.background = "rgb(173, 194, 169)";
+      });
+    </script>
+  </body>
+</html>

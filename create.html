@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create</title>
+    <link rel="stylesheet" href="create_css.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
+    />
+  </head>
+  <body>
+    <div class="create_container">
+      <h1 class="create_header_plan">계획을 세워요</h1>
+      <input
+        class="create_title"
+        type="text"
+        placeholder="계획을 세워요"
+        required
+      />
+      <input type="date" id="create_date" />
+      <article class="create_course">
+        <section class="create_section">
+          <section class="create_name">
+            <h4 class="create_name_title">장소</h4>
+            <input class="create_name_input" type="text" />
+          </section>
+          <section class="create_url">
+            <h4 class="create_url_title">URL</h4>
+            <input class="create_url_input" type="text" />
+          </section>
+        </section>
+        <button class="create_course_add_btn">➕</button>
+      </article>
+      <form>
+        <p>
+          <textarea
+            class="create_write"
+            placeholder="더 자세한 계획을 세워요"
+            cols="10"
+            rows="5"
+          ></textarea>
+        </p>
+      </form>
+      <button class="create_btn">➕</button>
+    </div>
+    <script>
+      document.getElementById("create_date").valueAsDate = new Date();
+    </script>
+  </body>
+</html>
