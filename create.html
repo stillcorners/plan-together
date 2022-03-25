@@ -13,18 +13,18 @@
   </head>
   <body>
     <div class="create_container">
-      <h1 class="create_header_plan">계획을 세워요</h1>
-      <input
-        class="create_title"
-        type="text"
-        placeholder="계획을 세워요"
-        required
-      />
-      <input type="date" id="create_date" />
+      <!-- <h1 class="create_header_plan">계획을 세워요</h1> -->
+      <input class="create_title" type="text" placeholder="제목" required />
+      <p class="create_date_title">함께 하는 기간</p>
+      <section class="create_dates">
+        <input type="date" id="create_date_from" />
+        <input type="date" id="create_date_to" />
+      </section>
+      <p class="create_course_title">코스 만들기</p>
       <article class="create_course">
         <section class="create_section">
           <section class="create_name">
-            <h4 class="create_name_title">장소</h4>
+            <h4 class="create_name_title">이름</h4>
             <input class="create_name_input" type="text" />
           </section>
           <section class="create_url">
@@ -32,22 +32,28 @@
             <input class="create_url_input" type="text" />
           </section>
         </section>
+
         <button class="create_course_add_btn">➕</button>
       </article>
       <form>
-        <p>
-          <textarea
-            class="create_write"
-            placeholder="더 자세한 계획을 세워요"
-            cols="10"
-            rows="5"
-          ></textarea>
-        </p>
+        <label for="create_write" class="create_write_title"
+          >코멘트 한 마디</label
+        >
+        <textarea
+          id="create_write"
+          placeholder="더 자세한 계획을 세워요"
+          cols="10"
+          rows="5"
+        ></textarea>
       </form>
-      <button class="create_btn">➕</button>
+      <button class="create_btn">저장</button>
     </div>
     <script>
-      document.getElementById("create_date").valueAsDate = new Date();
+      const dateFrom = document.getElementById("create_date_from");
+      const dateTo = document.getElementById("create_date_to");
+
+      dateFrom.valueAsDate = new Date();
+      // document.getElementById("create_date_from").valueAsDate = new Date();
     </script>
   </body>
 </html>

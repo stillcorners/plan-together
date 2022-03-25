@@ -9,15 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
     />
-    <link
-      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css"
-      rel="stylesheet"
-    />
     <style>
       body {
         box-sizing: border-box;
-        font-family: "NanumGothic";
-        background-color: rgb(229, 227, 201);
+        font-family: Noto Sans;
       }
 
       .main_container {
@@ -27,65 +22,89 @@
         max-width: 400px;
         min-width: 320px;
         padding: 30px;
-        background-color: white;
         margin-left: auto;
         margin-right: auto;
+        background-color: #f7f6ee;
       }
 
       .main_container_phrase {
-        font-family: "NanumGothic";
-        margin-top: 16px;
+        margin-top: 25px;
         margin-bottom: 16px;
         font-size: 32px;
         font-weight: 700;
       }
 
+      .main_container_2nd_phrase {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
       .main_container_date {
-        padding-bottom: 16px;
+        padding-bottom: 32px;
+        margin-top: 8px;
+        font-size: 14px;
+        color: green;
+        font-weight: 500;
       }
 
       .main_container_plan {
-        margin-top: 16px;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 24px;
+        font-size: 12px;
+        margin-bottom: 16px;
+        color: #596123;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail_plan,
+      .detail_completed_plan {
+        height: 24px;
+        width: 358px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        padding: 24px;
+        background: #e5e3c9;
+        display: flex;
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+      }
+
+      .detail_completed_plan {
+        background-color: #b4cfb0;
+      }
+
+      .checkbox {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        margin-left: auto;
+        background: #ffffff;
       }
 
       .main_container_completed_plan {
         margin-top: 32px;
         margin-bottom: 24px;
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      ul {
-        padding-left: 15px;
-        list-style: none;
+        font-size: 12px;
+        color: #596123;
+        margin-bottom: 16px;
       }
 
       .main_btn {
-        width: 50px;
-        height: 50px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
         border: none;
-        background: rgb(211, 228, 205);
+        background: #94b49f;
         cursor: pointer;
         margin-left: auto;
         display: block;
-      }
-
-      .checkbox {
-        /* min-width: none;
-        min-height: none; */
-        width: 24px;
-        height: 24px;
-        margin: 10px;
-        border-radius: 50px;
-        border: 1px solid lightgray;
-        cursor: pointer;
-        display: inline-block;
-        vertical-align: -18px;
-        /* background: rgb(173, 194, 169); */
       }
     </style>
   </head>
@@ -93,21 +112,30 @@
     <div class="main_container">
       <section class="main_container_nav">
         <h1 class="main_container_phrase">Plan Together</h1>
+        <p class="main_container_2nd_phrase">함께 만들어가는 우리의 시간</p>
         <p class="main_container_date"></p>
       </section>
       <section class="main_container_list">
-        <h2 class="main_container_plan">계획을 세워요</h2>
+        <h2 class="main_container_plan">함께할 시간</h2>
         <ul>
           <li class="detail_plan">
-            <div class="checkbox"></div>
             대전여행
+            <div class="checkbox"></div>
+          </li>
+          <li class="detail_plan">
+            대전여행
+            <div class="checkbox"></div>
           </li>
         </ul>
-        <h2 class="main_container_completed_plan">완료된 계획</h2>
+        <h2 class="main_container_completed_plan">함께 보낸 시간</h2>
         <ul>
           <li class="detail_completed_plan">
-            <div class="checkbox"></div>
             하이디라오
+            <div class="checkbox"></div>
+          </li>
+          <li class="detail_completed_plan">
+            하이디라오
+            <div class="checkbox"></div>
           </li>
         </ul>
       </section>
@@ -124,6 +152,7 @@
       day = date.getDate();
 
       document.getElementsByClassName("main_container_date")[0].innerHTML =
+        "🍀 " +
         year +
         "년 " +
         month +
@@ -140,7 +169,7 @@
       )[0];
 
       checkbox.addEventListener("click", function () {
-        checkbox.style.background = "rgb(173, 194, 169)";
+        checkbox.style.background = "#C4C4C4";
       });
     </script>
   </body>
