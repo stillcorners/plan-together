@@ -9,10 +9,19 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
     />
+    <script
+      src="https://kit.fontawesome.com/21a510b65e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+      type="text/css"
+    />
     <style>
       body {
         box-sizing: border-box;
-        font-family: Noto Sans;
+        /* font-family: Noto Sans; */
       }
 
       .main_container {
@@ -105,6 +114,11 @@
         cursor: pointer;
         margin-left: auto;
         display: block;
+        box-shadow: 0 8px 8px -2px rgb(179, 176, 176);
+      }
+
+      .fa-plus {
+        color: white;
       }
     </style>
   </head>
@@ -139,7 +153,9 @@
           </li>
         </ul>
       </section>
-      <button class="main_btn">➕</button>
+      <button class="main_btn">
+        <i class="fa-regular fa-plus"></i>
+      </button>
     </div>
 
     <script>
