@@ -9,19 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
     />
-    <script
-      src="https://kit.fontawesome.com/21a510b65e.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
-      type="text/css"
-    />
     <style>
       body {
         box-sizing: border-box;
-        /* font-family: Noto Sans; */
+        font-family: Noto Sans;
       }
 
       .main_container {
@@ -114,10 +105,12 @@
         cursor: pointer;
         margin-left: auto;
         display: block;
+        text-align: center;
         box-shadow: 0 8px 8px -2px rgb(179, 176, 176);
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
       }
 
-      .fa-plus {
+      .fa-plus-large {
         color: white;
       }
     </style>
@@ -126,7 +119,7 @@
     <div class="main_container">
       <section class="main_container_nav">
         <h1 class="main_container_phrase">Plan Together</h1>
-        <p class="main_container_2nd_phrase">함께 만들어가는 우리의 시간</p>
+        <p class="main_container_2nd_phrasse">함께 만들어가는 우리의 시간</p>
         <p class="main_container_date"></p>
       </section>
       <section class="main_container_list">
@@ -145,16 +138,62 @@
         <ul>
           <li class="detail_completed_plan">
             하이디라오
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                color="#C4C4C4"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
           </li>
           <li class="detail_completed_plan">
             하이디라오
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                color="#C4C4C4"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+            </div>
           </li>
         </ul>
       </section>
       <button class="main_btn">
-        <i class="fa-regular fa-plus"></i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30px"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          color="white"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4v16m8-8H4"
+          />
+        </svg>
       </button>
     </div>
 

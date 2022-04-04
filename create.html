@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>create</title>
+    <title>Create</title>
     <link rel="stylesheet" href="create_css.css" />
     <link
       rel="stylesheet"
@@ -14,7 +14,12 @@
   <body>
     <div class="create_container">
       <!-- <h1 class="create_header_plan">계획을 세워요</h1> -->
-      <input class="create_title" type="text" placeholder="제목" required />
+      <input
+        class="create_title"
+        type="text"
+        placeholder="함께할 시간"
+        required
+      />
       <p class="create_date_title">함께 하는 기간</p>
       <section class="create_dates">
         <input type="date" id="create_date_from" />
@@ -33,7 +38,23 @@
           </section>
         </section>
 
-        <button class="create_course_add_btn">➕</button>
+        <button class="create_course_add_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20px"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+        </button>
       </article>
       <form>
         <label for="create_write" class="create_write_title"
@@ -41,8 +62,9 @@
         >
         <textarea
           id="create_write"
-          placeholder="더 자세한 계획을 세워요"
+          placeholder="더 자세한 이야기를 나눠요"
           cols="10"
+          s
           rows="5"
         ></textarea>
       </form>
@@ -53,6 +75,43 @@
       const dateTo = document.getElementById("create_date_to");
 
       dateFrom.valueAsDate = new Date();
+      var date = new Date();
+      // dateTo.valueAsDate = new Date();
+
+      // dateTo.valueAsDate.setDate(dateTo.valueAsDate.getDate() + 1);
+
+      //use the constructor to create by milliseconds
+      var tomorrow = new Date(date.getTime() + 24 * 60 * 60 * 1000);
+      var tomorrow = new Date(date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      ("2022-03-30 01:00:00 +09:00");
+
+      dateTo.value = "????-??-??";
+      ///////////////////////////////////////////
+
+      date = new Date();
+      year = date.getFullYear();
+      month = date.getMonth() + 1;
+      day = date.getDate() + 1;
+
+      let nong = month;
+
+      if (month <= 9) {
+        nong = "0" + month;
+      }
+
+      let dam = day;
+
+      if (day <= 9) {
+        dam = "0" + day;
+      }
+
+      dateTo.value = year + "-" + nong + "-" + dam;
+
+      // 기대 > '2022-03-30'
+      // 현실 > '2022-03-30'
+
       // document.getElementById("create_date_from").valueAsDate = new Date();
     </script>
   </body>
